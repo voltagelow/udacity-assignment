@@ -1,22 +1,23 @@
-# udacity-assignment
+# Udacity-Assignment
 
-## Command to execute Code 
+### Command to execute Code 
 python boardGameValidation.py
 
 ### User Defined Variables 
-#### Board(b) 
+### Board(b) 
   Is a 2 Dimension matrix represented as list , ex b1=[[2,1,4,3],[1,4,3,2],[3,2,1,4],[4,3,2,1]]
-#### Constraints(c)
+### Constraints(c)
   Represented as a hashmap where key id operator(gt=>greaterthen , lt=>less then..etc) and val as list of tuple represent 2 points in matrix,can be extended to other operations like multiply, divide and user defined expressions.
   ex c1={"gt":[(1,1),(1,2)],'gt':[(2,3),(3,3)]}
  
 python boardGameValidation.py =>  will execute all the test cases defined in the script you can edit the existing ones or extend the same in a similar manner.
 
-On Success 
+### On Success 
 ----------------------------------------------------------------------
 Ran 1 test in 0.001s
 
 OK
+### OnFailure
 
 If any test cases failed we will see the number of failures and exact point of failure too, ex
 
@@ -28,7 +29,23 @@ Traceback (most recent call last):
     self.assertEqual(ac1,a.isValid(b1,c1))
 AssertionError: False != True
 
+
 ----------------------------------------------------------------------
 Ran 1 test in 0.001s
 
 FAILED (failures=1)
+
+
+### Logging 
+Used python logging module which will create a log file named Constraints_{timestamp}.log , which will contain the the information for the test cases failed
+(used to debug in production)
+
+#### Sample log file content
+INFO:root:Called constraints....
+INFO:root:Called constraints....
+INFO:root:Constraint failed for operator gt for values [(3, 2), (3, 3)]
+INFO:root:Called constraints....
+INFO:root:Constraint failed for operator gt for values [(3, 2), (3, 3)]
+INFO:root:Called constraints....
+INFO:root:Constraint failed for operator gt for values [(3, 2), (3, 3)]
+
